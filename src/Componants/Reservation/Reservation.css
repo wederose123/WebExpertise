@@ -5,7 +5,6 @@
 .resa {
   position: relative;
   background: #080b0a;
-  padding: 120px 0px;
   overflow: hidden;
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   color: #fff;
@@ -45,6 +44,7 @@
   text-align: center;
   max-width: 680px;
   margin: 0 auto 56px;
+  padding-top: 80px
 }
 
 .resa__badge {

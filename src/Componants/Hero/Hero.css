@@ -1,0 +1,341 @@
+/* ========================================
+   HERO SECTION v2
+   ======================================== */
+
+.hero2 {
+  position: relative;
+  background: #0b0e0d;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  color: #ffffff;
+}
+
+/* Dot grid */
+.hero2__bg-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Blue glow top-left */
+.hero2__bg-glow {
+  position: absolute;
+  top: -150px;
+  left: -100px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* SVG curved lines */
+.hero2__curves {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Dot navigation top right */
+.hero2__dots {
+  position: absolute;
+  top: 28px;
+  right: 36px;
+  display: none;
+  gap: 8px;
+  z-index: 10;
+}
+
+.hero2__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+}
+
+.hero2__dot--active {
+  background: #ffffff;
+}
+
+/* ---- Main container ---- */
+.hero2__container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding: 64px 80px 24px;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- LEFT ---- */
+.hero2__left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 520px;
+}
+
+.hero2__headline {
+  font-size: 52px;
+  line-height: 1.12;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: -0.5px;
+  color: #f0f0f0;
+}
+
+.hero2__headline strong {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.hero2__highlight {
+  color: #3b82f6;
+}
+
+.hero2__cta {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  padding: 18px 36px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 24px rgba(59, 130, 246, 0.4);
+}
+
+.hero2__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.6);
+}
+
+.hero2__social-proof {
+  display: flex;
+  align-items: center;
+}
+
+.hero2__clients {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.hero2__clients strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.hero2__shield {
+  font-size: 16px;
+}
+
+/* ---- RIGHT — VSL ---- */
+.hero2__right {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero2__watch-label {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero2__arrow {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.hero2__video-wrapper {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+}
+
+.hero2__video-overlay {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: #1a2020;
+}
+
+.hero2__video-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(160deg, rgba(20, 30, 25, 0.85) 0%, rgba(10, 14, 12, 0.6) 100%),
+    url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80') center/cover no-repeat;
+}
+
+.hero2__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.hero2__play-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translate(-50%, -50%) scale(1.07);
+}
+
+.hero2__expert-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(15, 20, 18, 0.82);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px 16px;
+}
+
+.hero2__expert-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hero2__expert-name {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.hero2__expert-title {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ---- BOTTOM BAR ---- */
+.hero2__bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  position: relative;
+  z-index: 1;
+}
+
+.hero2__features {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.hero2__feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+}
+
+.hero2__check {
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+
+.hero2__trustpilot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.hero2__trustpilot-logo {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+.hero2__stars {
+  display: flex;
+  gap: 2px;
+}
+
+.hero2__star--filled { color: #3b82f6; }
+.hero2__star--half   { color: rgba(59, 130, 246, 0.4); }
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .hero2__container { padding: 48px 40px 24px; gap: 32px; }
+  .hero2__headline  { font-size: 42px; }
+  .hero2__bottom-bar { padding: 18px 40px; }
+  .hero2__features  { gap: 20px; }
+}
+
+@media (max-width: 768px) {
+  .hero2__container {
+    flex-direction: column;
+    padding: 48px 24px 24px;
+  }
+  .hero2__left      { max-width: 100%; align-items: center; text-align: center; }
+  .hero2__headline  { font-size: 34px; }
+  .hero2__right     { width: 100%; }
+  .hero2__dots      { top: 16px; right: 16px; }
+  .hero2__bottom-bar { flex-direction: column; gap: 16px; padding: 20px 24px; }
+  .hero2__features  { justify-content: center; gap: 14px; }
+  .hero2__clients   { white-space: normal; text-align: center; }
+}

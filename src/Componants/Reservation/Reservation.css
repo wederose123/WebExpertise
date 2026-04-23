@@ -1,0 +1,99 @@
+/* =============================================
+   RÉSERVATION  —  Formulaire + Calendrier
+   ============================================= */
+
+.resa {
+  position: relative;
+  background: #080b0a;
+  padding: 120px 0px;
+  overflow: hidden;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  color: #fff;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.resa__bg-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.resa__orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(90px);
+}
+.resa__orb--1 { width:500px; height:500px; top:-100px; left:-120px;  background: rgba(59,130,246,0.13); }
+.resa__orb--2 { width:400px; height:400px; bottom:-80px; right:-80px; background: rgba(99,102,241,0.10); }
+
+.resa__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 80px;
+  box-sizing: border-box;
+}
+
+/* ── Header ── */
+.resa__head {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 56px;
+}
+
+.resa__badge {
+  display: inline-flex;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #3b82f6;
+  padding: 6px 16px;
+  border: 1px solid rgba(59,130,246,0.3);
+  border-radius: 999px;
+  background: rgba(59,130,246,0.08);
+  backdrop-filter: blur(8px);
+  margin-bottom: 18px;
+}
+
+.resa__title {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 0 0 14px;
+}
+.resa__blue { color: #3b82f6; }
+
+.resa__lead {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.48);
+  margin: 0;
+}
+
+/* ── Iframe pleine largeur ── */
+.resa__iframe {
+  display: block;
+  width: 100%;
+  height: 0;
+  min-height: 600px;
+  border: none;
+  background: transparent;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 640px) {
+  .resa { padding: 80px 0 64px; }
+  .resa__inner { padding: 0 20px; }
+  .resa__head  { margin-bottom: 40px; }
+}

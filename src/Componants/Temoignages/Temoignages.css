@@ -1,0 +1,214 @@
+/* =============================================
+   TEMOIGNAGES  —  Portfolio grid (fidèle référence)
+   ============================================= */
+
+.tpf {
+  position: relative;
+  background: #080b0a;
+  padding: 100px 0 100px;
+  overflow: hidden;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  color: #fff;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.tpf__bg-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tpf__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 80px;
+  box-sizing: border-box;
+}
+
+/* ── Top row : titre + flèches ── */
+.tpf__toprow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+/* Titre deux tons uppercase comme référence */
+.tpf__title {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.95;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.tpf__title-main {
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  color: #ffffff;
+}
+
+.tpf__title-sub {
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  color: rgba(255,255,255,0.22);
+}
+
+/* Nav flèches */
+.tpf__nav {
+  display: none;
+  gap: 10px;
+  padding-top: 8px;
+  flex-shrink: 0;
+}
+
+.tpf__nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.tpf__nav-btn:hover {
+  background: rgba(59,130,246,0.2);
+  border-color: rgba(59,130,246,0.5);
+  color: #fff;
+}
+
+/* ── Grid 2×2 ── */
+.tpf__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* ── Card ── */
+.tpf__card {
+  border-radius: 12px;        /* bords peu arrondis comme référence */
+  overflow: hidden;
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.tpf__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* Zone image 16/10 */
+.tpf__card-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+/* Overlay */
+.tpf__card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.tpf__card:hover .tpf__card-overlay { opacity: 1; }
+
+.tpf__card-view {
+  background: #fff;
+  color: #000;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 11px 28px;
+  border-radius: 999px;
+  transform: translateY(6px);
+  transition: transform 0.25s;
+}
+
+.tpf__card:hover .tpf__card-view { transform: translateY(0); }
+
+/* Placeholder */
+.tpf__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tpf__placeholder span {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.12);
+  text-transform: uppercase;
+}
+
+/* Infos sous l'image */
+.tpf__card-info {
+  padding: 14px 16px 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.tpf__card-title {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.tpf__card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tpf__card-cat {
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+  font-weight: 500;
+}
+
+.tpf__card-year {
+  font-size: 13px;
+  color: rgba(255,255,255,0.25);
+  font-weight: 500;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 768px) {
+  .tpf__grid { grid-template-columns: 1fr; }
+  .tpf__toprow { flex-direction: column; }
+}
+
+@media (max-width: 640px) {
+  .tpf { padding: 72px 0 64px; }
+  .tpf__inner { padding: 0 20px; }
+  .tpf__title-main,
+  .tpf__title-sub { font-size: 2.4rem; }
+}

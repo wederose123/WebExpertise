@@ -1,0 +1,264 @@
+/* =============================================
+   PREUVE SOCIALE  —  vidéo + résultats
+   ============================================= */
+
+.pv {
+  position: relative;
+  background: #080b0a;
+  padding: 120px 0 100px;
+  overflow: hidden;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  color: #fff;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Dot grid */
+.pv__bg-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Orbs */
+.pv__orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(90px);
+}
+.pv__orb--1 { width:500px; height:500px; top:-120px; right:-100px;  background: rgba(59,130,246,0.12); }
+.pv__orb--2 { width:380px; height:380px; bottom:-80px; left:-80px;  background: rgba(99,102,241,0.10); }
+
+/* Inner */
+.pv__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 80px;
+  box-sizing: border-box;
+}
+
+/* ── Header ── */
+.pv__head {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.pv__badge {
+  display: inline-flex;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #3b82f6;
+  padding: 6px 16px;
+  border: 1px solid rgba(59,130,246,0.3);
+  border-radius: 999px;
+  background: rgba(59,130,246,0.08);
+  backdrop-filter: blur(8px);
+  margin-bottom: 18px;
+}
+
+.pv__title {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.pv__blue { color: #3b82f6; }
+
+/* ── Grid 2 colonnes ── */
+.pv__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.pv__col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Base glass card ── */
+.pv__video-card,
+.pv__quote-card,
+.pv__proof-card,
+.pv__result-card {
+  position: relative;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+
+/* Reflet haut */
+.pv__card-shine {
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18) 40%, rgba(255,255,255,0.18) 60%, transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ── Vidéo ── */
+.pv__video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: #111;
+}
+
+.pv__video-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(160deg, rgba(20,30,25,0.85), rgba(10,14,12,0.6)),
+    url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80') center/cover no-repeat;
+}
+
+.pv__play-btn {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.pv__play-btn:hover {
+  background: rgba(59,130,246,0.5);
+  transform: translate(-50%, -50%) scale(1.08);
+  border-color: rgba(59,130,246,0.8);
+}
+
+.pv__video-label {
+  position: absolute;
+  bottom: 14px; left: 16px;
+  display: flex; align-items: center; gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  background: rgba(0,0,0,0.45);
+  padding: 6px 12px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+/* ── Quote ── */
+.pv__quote-card {
+  padding: 28px 28px 24px;
+}
+
+.pv__quote-mark {
+  display: block;
+  font-size: 4rem;
+  line-height: 0.7;
+  margin-bottom: 16px;
+  color: rgba(59,130,246,0.35);
+  font-family: Georgia, serif;
+}
+
+.pv__quote-text {
+  margin: 0;
+  font-size: 0.97rem;
+  line-height: 1.72;
+  color: rgba(255,255,255,0.65);
+  font-style: italic;
+}
+
+/* ── Proof image ── */
+.pv__proof-wrap {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 12px;
+  padding: 20px;
+  min-height: 240px;
+}
+
+.pv__proof-slot {
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px dashed rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 12px;
+  text-align: center;
+}
+
+.pv__proof-slot span {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  line-height: 1.5;
+}
+
+/* ── Résultat ── */
+.pv__result-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 24px;
+  background: rgba(59,130,246,0.07);
+  border-color: rgba(59,130,246,0.2);
+}
+
+.pv__result-icon {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  font-weight: 900;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(59,130,246,0.4);
+}
+
+.pv__result-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.7);
+  font-style: italic;
+}
+
+.pv__result-text strong {
+  color: #fff;
+  font-style: normal;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 768px) {
+  .pv__grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .pv { padding: 80px 0 64px; }
+  .pv__inner { padding: 0 20px; }
+  .pv__proof-wrap { grid-template-columns: 1fr; }
+}

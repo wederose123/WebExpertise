@@ -1,22 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import './Reservation.css';
 
 export default function Reservation() {
-  const [form, setForm] = useState({
-    nom: '', prenom: '', email: '', telephone: '',
-  });
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
   const iframeRef = useRef(null);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // TODO: connecter Firebase ici
-    console.log('Formulaire soumis :', form);
-  };
 
   // Ajustement dynamique de la hauteur de l'iframe via postMessage
   useEffect(() => {
